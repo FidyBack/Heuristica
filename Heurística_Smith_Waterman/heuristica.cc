@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <string.h>
 #include <cmath>
 #include <vector>
 #include <tuple>
@@ -123,7 +124,9 @@ int main(int argc, char const *argv[])
 			new_seq2.push_back(seq2[column]);
 			simb_seq.push_back(' ');
 		}
-	} std::cout << std::endl;
+	} 
+	std::cout << std::endl;
+	
 	std::cout << "------------------------------------------------------------" << std::endl;
 	for (auto k : new_seq1) {
 		std::cout << k;
@@ -140,27 +143,31 @@ int main(int argc, char const *argv[])
 	std::cout << "------------------------------------------------------------" << std::endl;
 
 	// Print da Tabela
-	std::cout << "    ";
-	for (char x : seq2) {
-		std::cout << x << " ";
-	}
-	std::cout << std::endl;
-
-	int ak = 1;
-	int count = -1;
-	for (auto l : matr) {
-		if (count == -1) {
-			std::cout << "  ";
-			count++;
-		}
-		if (m+1 < ak) {
+	if (argc == 2) {
+		if (strcmp(argv[1], "-m") == 0) {
+			std::cout << "    ";
+			for (char x : seq2) {
+				std::cout << x << " ";
+			}
 			std::cout << std::endl;
-			std::cout << seq1[count] << " ";
-			count++;
-			ak = 1;
+
+			int ak = 1;
+			int count = -1;
+			for (auto l : matr) {
+				if (count == -1) {
+					std::cout << "  ";
+					count++;
+				}
+				if (m+1 < ak) {
+					std::cout << std::endl;
+					std::cout << seq1[count] << " ";
+					count++;
+					ak = 1;
+				}
+				std::cout << std::get<0>(l) << " ";
+				ak++;
+			}
 		}
-		std::cout << std::get<0>(l) << " ";
-		ak++;
 	}
 
 	std::cout << std::endl;

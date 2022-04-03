@@ -34,6 +34,8 @@ AATC_T_G___GT__CT___TAGA_AAC_AC-ACC--T-GT_-TAG___C_GCGGGAAACATGCGAT
 **** * *   **  **   **|* *** |* *|||* *|* ****   * |****   *|** * *
 AATCTT-GCTCGTCGCT--CTACACAACTGC_ATAT-_-CTA-TAGC-AC--CGGG___C-TG_G_T
 ```
+Sendo possível validar em uma [ferramenta externa](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Smith-Waterman)<br/>
+
 Além disso, também será mostrado o tempo que levou do começo até o final da execução do código, em ms. 
 
 É possível, ainda, executar:

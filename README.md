@@ -7,7 +7,7 @@ A primeira entrega, relacionada ao projeto _Heurística de Alinhamento Local de 
 * **SequenceGenerator.ipynb:** É o arquivo usado para gerar as sequências aleatoriamente;
 * **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
 * **her:** Executável criado a partir de _heuristica.cc_;
-* **heuristica.cc:** Arquivo em C++ que contém o algorítmo em sí.
+* **heuristica.cc:** Arquivo em C++ que contém o algoritmo em si.
  
 Assim, as seguintes sequências foram utilizadas nesse projeto:
 
@@ -19,7 +19,7 @@ _AATCTGGTCTTAGAAACAC-ACC--T-GT-TAGCGCGGGAAACATGCGAT_<br/>
 _TTTGAGCCA-GG-C-A--TTGCCTGCA-TGTCAATAGA-ACACTCAT-TCG-TGGTG-CC-G--ATG-TA--GG-ACG--TGAC-ATATC--TGCTTCCGTGG-TGC-AGTTATAGAGCATACCAGAACATCGCATTAGGTCTAG-C-G-CTT-AATCCGTCTGTGGGCG--CCATTTAGGTTTACA---AAC-ATACCGA-CGCG-GACTAG-A-TCTAAGTAG---TT-TCTAAC-T--AGAAGTGTTAGA-AC-TGTA-CAGT-TC-TT-CA-AC-T-TCAA-CG--AACAT--ATAGAGTTGAA-C-GCCGGCCAGG-TC-AAGAAATGTCGGTG-CTTCTAACTGC-CTGCATTGTGAT-G-CAC-A-G-GGACTTTTAAG-CGAATCTT-GCTCGTCGCT--CTACACAACTGCATAT--CTA-TAGC-AC--CGGGC-TGGT-A-G-GTCCAAA----ATCTGT--TATACTC-AC-AT-GAAACA--CAG--TC-AATTGGCCA-TCGAAAT-AG--ATTAC--CATCGCAAGATTCTCA-TTC-TGCT-ACAT--CCGCCC-CCAA--CGTCC--TTTACAAACCGAGTCAGCGGT-CTTC-AATT-A--CCGAC-CGAAGTCCC-G-G-TTA-GTCTTG--TCTT-TTG-GGAG-GC-C-AA-ACCGGT-CT--GAATATA--GTGGT--ATAACAG-GAGAGCCCT-CGTCCTA--CAC-GG-TA-TC-TTGG--ATA-TTCGAATT-TT-GT-TAGCCAC-GC-CAA-AAGGAGCGGTC-ATGTCA-AGC-CTTTGCATC-AATG-C-CTC-AAACTATGCAAGCGATGACTCGGTCG-GGGCACG-GGT--TC-CCAC-ATAGTAGCG-CGTTCGCGGC-TC-TATGCAT-TT-GC-A-TTT-CAAGGT-TA-AT-TT-TATCGTT-C-TACCTGA-AG--TATCC-TCTC-TC-GTTGCG--TAATC-G-G-C--CT-ATCC-AGT_<br/>
 **Tamanho:** 1000
 
-É possível rodar o algorítmo com o seguinte comando:
+É possível rodar o algoritmo com o seguinte comando:
 ```
 ./her < dna.seq
 ```
@@ -49,7 +49,7 @@ Para a visualização da matriz completa.
 A segunda entrega, que se encontra na pasta _Alinhamento_Local_, possui uma estrutura parecida com a do primeiro projeto, porém com 3 arquivos:
 * **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
 * **ali:** Executável criado a partir de _alinhamento.cc_;
-* **alinhamento.cc:** Arquivo em C++ que contém o algorítmo em sí.
+* **alinhamento.cc:** Arquivo em C++ que contém o algoritmo em si.
 E foram usadas as mesmas sequências com os mesmos tamanhos do projeto 1.
 
 Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execução:
@@ -67,11 +67,11 @@ Máximo: 20
 ```
 Com um tempo levemente variável.
 
-Além disso, também é possivel rodar:
+Além disso, também é possível rodar:
 ```
 ./ali < dna.seq -m
 ```
-Para uma lista comleta de todas as Sa geradas, para efeito de comparação:
+Para uma lista completa de todas as Sa geradas, para efeito de comparação:
 ```
 ./ali < dna.seq -m
 Sb: CTTG--TCTT-TTG-GGAG-GC-C-AA-ACCGGT

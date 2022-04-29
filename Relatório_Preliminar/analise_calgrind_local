@@ -1,0 +1,296 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.66642' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 888857
+Trigger: Program termination
+Profiled target:  ./ali (PID 66642, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   alinhamento.cc
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir        
+--------------------------------------------------------------------------------
+4,944,344  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir         file:function
+--------------------------------------------------------------------------------
+1,349,556  alinhamento.cc:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >) [/media/abel/MySSD/Insper/2022_1_7_Semestre/Supercomputacao/Projetos/Relatório_Preliminar/ali]
+  957,516  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  566,705  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  465,846  /usr/include/c++/9/tuple:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)
+  274,749  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+  149,730  /usr/include/c++/9/bits/vector.tcc:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)
+  118,892  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   90,485  /build/glibc-sMfBJT/glibc-2.31/elf/do-rel.h:_dl_relocate_object
+   84,217  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   75,642  /usr/include/c++/9/bits/stl_algo.h:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)
+   71,545  /build/glibc-sMfBJT/glibc-2.31/elf/dl-addr.c:_dl_addr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   69,480  /usr/include/c++/9/tuple:void std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_realloc_insert<std::tuple<int, int, int> >(__gnu_cxx::__normal_iterator<std::tuple<int, int, int>*, std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > > >, std::tuple<int, int, int>&&)
+   64,241  ???:std::istream::sentry::sentry(std::istream&, bool) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   38,336  /build/glibc-sMfBJT/glibc-2.31/libio/getc.c:getc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   37,800  ???:std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char> >(std::basic_istream<char, std::char_traits<char> >&, char&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   37,224  /usr/include/c++/9/bits/stl_iterator.h:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)
+   34,830  /usr/include/c++/9/bits/stl_vector.h:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)
+   33,952  /build/glibc-sMfBJT/glibc-2.31/libio/iofflush.c:fflush [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   26,036  /build/glibc-sMfBJT/glibc-2.31/elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   20,349  /build/glibc-sMfBJT/glibc-2.31/libio/genops.c:_IO_sputbackc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   20,159  /build/glibc-sMfBJT/glibc-2.31/libio/libioP.h:fflush
+   19,134  /build/glibc-sMfBJT/glibc-2.31/libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   18,570  /usr/include/c++/9/bits/stl_uninitialized.h:void std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_realloc_insert<std::tuple<int, int, int> >(__gnu_cxx::__normal_iterator<std::tuple<int, int, int>*, std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > > >, std::tuple<int, int, int>&&)
+   17,136  /build/glibc-sMfBJT/glibc-2.31/libio/ioungetc.c:ungetc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   15,870  ???:std::ostream::flush() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   13,943  /usr/include/c++/9/bits/stl_vector.h:main
+   12,128  ???:std::locale::_Impl::_M_install_facet(std::locale::id const*, std::locale::facet const*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   11,944  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:_int_free [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   11,717  alinhamento.cc:main [/media/abel/MySSD/Insper/2022_1_7_Semestre/Supercomputacao/Projetos/Relatório_Preliminar/ali]
+   11,046  /usr/include/c++/9/bits/move.h:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)
+   10,233  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   10,188  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:_dl_relocate_object
+    9,639  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    8,960  /build/glibc-sMfBJT/glibc-2.31/wcsmbs/btowc.c:btowc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    8,605  /build/glibc-sMfBJT/glibc-2.31/elf/dl-version.c:_dl_check_map_versions [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    8,472  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::uflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    8,383  /build/glibc-sMfBJT/glibc-2.31/elf/dl-tunables.h:__GI___tunables_init
+    7,505  /build/glibc-sMfBJT/glibc-2.31/elf/../elf/dl-runtime.c:_dl_fixup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    6,798  /build/glibc-sMfBJT/glibc-2.31/stdlib/random_r.c:srandom_r [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    6,736  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    6,570  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
+    4,265  ???:0x00000000048eb130 [???]
+    3,303  /build/glibc-sMfBJT/glibc-2.31/elf/dl-cache.c:_dl_cache_libcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,234  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:free [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    3,186  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:_dl_map_object_from_fd [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,174  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::sync() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    3,062  /build/glibc-sMfBJT/glibc-2.31/elf/dl-misc.c:_dl_name_match_p [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,034  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave'2 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,816  /build/glibc-sMfBJT/glibc-2.31/wcsmbs/wctob.c:wctob [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,733  ???:std::ctype<wchar_t>::_M_initialize_ctype() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,548  ???:__dynamic_cast [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,319  /build/glibc-sMfBJT/glibc-2.31/libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,239  /build/glibc-sMfBJT/glibc-2.31/elf/dl-deps.c:_dl_map_object_deps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,147  ???:0x00000000048e8880 [???]
+    2,128  ???:std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,127  ???:0x00000000048eb080 [???]
+    2,122  /build/glibc-sMfBJT/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:fflush
+    2,121  ???:0x00000000048e9530 [???]
+    2,119  /build/glibc-sMfBJT/glibc-2.31/libio/iofwrite.c:fwrite [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,109  ???:0x00000000048ea6a0 [???]
+    2,108  /usr/include/c++/9/new:main
+    2,105  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:_dl_map_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,100  ???:0x0000000000109260 [???]
+    1,694  ???:operator new(unsigned long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,608  /build/glibc-sMfBJT/glibc-2.31/elf/get-dynamic-info.h:_dl_map_object_from_fd
+    1,480  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,447  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:open_verify.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,408  /build/glibc-sMfBJT/glibc-2.31/elf/dl-sort-maps.c:_dl_sort_maps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,233  /build/glibc-sMfBJT/glibc-2.31/elf/dl-cache.c:_dl_load_cache_lookup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,220  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:__strlen_avx2 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,187  /build/glibc-sMfBJT/glibc-2.31/elf/dl-object.c:_dl_new_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,153  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:__memcmp_avx2_movbe [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,124  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:open_path [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,109  /build/glibc-sMfBJT/glibc-2.31/elf/rtld.c:dl_main [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,092  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:memset [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,087  ???:std::ctype<char>::_M_widen_init() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,074  ???:std::locale::id::_M_id() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,065  /build/glibc-sMfBJT/glibc-2.31/elf/dl-minimal.c:malloc [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,036  /build/glibc-sMfBJT/glibc-2.31/wctype/wctype_l.c:wctype_l [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,020  /build/glibc-sMfBJT/glibc-2.31/stdlib/random_r.c:random_r [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      907  /build/glibc-sMfBJT/glibc-2.31/stdio-common/printf_fp.c:__printf_fp_l [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      903  ???:std::ostream::sentry::sentry(std::ostream&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+      896  /build/glibc-sMfBJT/glibc-2.31/wcsmbs/./wcsmbsload.h:btowc
+      888  /build/glibc-sMfBJT/glibc-2.31/elf/dl-reloc.c:_dl_relocate_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      861  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      824  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strlen.S:strlen [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      768  /build/glibc-sMfBJT/glibc-2.31/elf/dl-profstub.c:_dl_mcount_wrapper_check [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+
+--------------------------------------------------------------------------------
+-- User-annotated source: alinhamento.cc
+--------------------------------------------------------------------------------
+Ir      
+
+-- line 3 ----------------------------------------
+      .  #include <algorithm>
+      .  #include <cmath>
+      .  #include <vector>
+      .  #include <tuple>
+      .  #include <string.h>
+      .  #include <chrono> 
+      .  
+      .  int randRange (int low, int high) {
+    129      return rand() % (high - low + 1) + low;
+  1,980  => ???:0x0000000000109190 (32x)
+      .  }
+      .  
+    420  int matriz (int n, int m, std::vector<char> seq1, std::vector<char> seq2) {
+      .  	std::vector<std::tuple<int, int, int>> matr;
+      .  	
+     90  	matr.reserve(n*m);
+  6,570  	for (int i = 0; i <= n; i++) {
+194,250  		for (int j = 0; j <= m; j++) {
+144,900  			if (i == 0 || j == 0) {
+      .  				matr.push_back(std::make_tuple(0, i*(m+1)+j, 0));
+      .  			}
+      .  			else {
+      .  				// Calcula Diagonal, Na esquerda e Acima
+      .  				int diag = 0;
+346,800  				if (seq1[i-1] == seq2[j-1]) {
+  6,953  					diag = std::get<0>(matr[(i-1)*(m+1)+(j-1)]) + 2;
+      .  				}
+      .  				else {
+ 34,680  					diag = std::get<0>(matr[(i-1)*(m+1)+(j-1)]) - 1;
+      .  				}
+173,400  				int inser = std::get<0>(matr[i*(m+1)+(j-1)]) - 1;
+173,400  				int del = std::get<0>(matr[(i-1)*(m+1)+j]) - 1;
+      .  
+      .  				// Procura o maior valor e armazena na tupla (valor, index)
+ 82,496  				if (diag < 0 && inser < 0 && del < 0) {
+      .  					matr.push_back(std::make_tuple(0, i*(m+1)+j, i*(m+1)+j));
+      .  				}
+157,575  				else if (diag >= inser && diag >= del) {
+      .  					matr.push_back(std::make_tuple(diag, i*(m+1)+j, (i-1)*(m+1)+(j-1)));
+      .  				}
+ 27,662  				else if (inser > del) {
+      .  					matr.push_back(std::make_tuple(inser, i*(m+1)+j, i*(m+1)+(j-1)));
+      .  				}
+      .  				else {
+      .  					matr.push_back(std::make_tuple(del, i*(m+1)+j, (i-1)*(m+1)+j));
+      .  				}
+      .  			}
+      .  		}
+      .  	}
+      .  
+      .  	return std::get<0>(*std::max_element(matr.begin(), matr.end())); // Retorna o maior valor da matriz
+    360  }
+      .  
+     13  int main(int argc, char const *argv[]) {
+      .  	// Seed usada: 30
+      2  	srand(30);
+  6,817  => ???:0x0000000000109210 (1x)
+      .  
+      .  	// Inputs
+      .  	std::vector<char> seq1, seq2;
+      1  	int n, m = 0;
+      6  	std::cin >> n >> m;
+  8,419  => ???:0x00000000001091d0 (2x)
+      4  	seq1.reserve(n);
+    242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      4  	seq2.reserve(m);
+    228  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      .  
+    205  	for (int i = 0; i < n; i++) {
+      .  		char z;
+    151  		std:: cin >> z;
+ 14,517  => ???:0x0000000000109260 (50x)
+      .  		seq1.push_back(z);
+      .  	}
+      .  
+  5,005  	for (int i = 0; i < m; i++) {
+      .  		char z;
+  3,002  		std::cin >> z;
+288,117  => ???:0x0000000000109260 (1,000x)
+      .  		seq2.push_back(z);
+      .  	}
+      .  
+      3  	if (n > m) {
+      .  		std::swap(n, m);
+      .  		std::swap(seq1, seq2);
+      .  	}
+      .  
+      .  	// Medida de tempo
+      2  	auto start = std::chrono::high_resolution_clock::now();
+    937  => ???:0x0000000000109180 (1x)
+      .  
+      .  	// Criação das sequiências aleatórias
+      .  	std::vector<char> seq2_rand;
+      .  	int k = 0, j = 0;
+     10  	int p = (m/n)*1.5;
+      .  
+      2  	if (m <= n) {	// Tamanho depende de quem é a maior sequência
+      .  		k = randRange(1, m);
+      .  	} else {
+      .  		k = randRange(1, n);
+      .  	}
+      .  
+      1  	j = randRange(0, m); // Posição inicial da sequência aleatória (j+k não deve passar o tamanho da sequência)
+      2  	if (j+k > m) {
+      4  		j = m - k;
+      .  	}
+      .  
+      5  	seq2_rand.reserve(k);
+    242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+     74  	for (int i = 0; i < k; i++) {
+      .  		seq2_rand.push_back(seq2[j]);
+      .  		j++;
+      .  	}
+      .  
+      .  	// Print
+      3  	std::cout << "Sb: "; // Sequência Sb
+  4,314  => ???:0x0000000000109220 (1x)
+    107  	for (int i = 0; i < k; i++) {
+    102  		std::cout << seq2_rand[i];
+      .  	}
+      .  	std::cout << std::endl;
+      .  
+      .  	// Cálculo das P sequências e o máximo
+      .  	std::vector<int> max_values;
+      1  	max_values.reserve(p);
+    100  	for (int z = 0; z < p; z++) {
+      .  		std::vector<char> seq1_rand;
+      .  		int i = 0;
+      .  		
+     30  		i = randRange(0, n); // Posição inicial da sequência aleatória (i+k não deve passar o tamanho da sequência)
+     60  		if (i+k > n) {
+    120  			i = n - k;
+      .  		}
+      .  
+     90  		seq1_rand.reserve(k);
+  2,997  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (30x)
+  2,190  		for (int w = 0; w < k; w++) {
+      .  			seq1_rand.push_back(seq1[i]);
+      .  			i++;
+      .  		}
+      .  
+    210  		int max = matriz(k, k, seq1_rand, seq2_rand);
+2,235,642  => alinhamento.cc:matriz(int, int, std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >) (30x)
+      .  		max_values.push_back(max);
+      .  
+      .  		// Print das Sequências Sa
+     60  		if (argc == 2) {
+      .  			if (strcmp(argv[1], "-m") == 0) {
+      .  				std::cout << "Sa[" << z << "]: ";
+      .  				for (int i = 0; i < k; i++) {
+      .  					std::cout << seq1_rand[i];
+      .  				}
+      .  				std::cout << "  Máximo: " << max << std::endl; // Print Máximo daquela comparação
+      .  			}
+      .  		}
+      .  	}
+      .  
+      .  	// Maior elemento encontrado
+      4  	std::cout << "Máximo: " << *std::max_element(max_values.begin(), max_values.end()) << std::endl;
+  2,505  => ???:0x00000000001092a0 (1x)
+      .  
+      .  	// Medida de tempo
+      1  	auto end = std::chrono::high_resolution_clock::now();
+     40  => ???:0x0000000000109180 (1x)
+      .  	std::chrono::duration<double, std::milli> elapsed = end - start;
+      2  	std::cout << "Tempo: " << elapsed.count() << " ms";
+    287  => ???:0x0000000000109220 (1x)
+      .  	std::cout << std::endl;
+      .  
+      .  	return 0;
+     15  }
+
+--------------------------------------------------------------------------------
+Ir        
+--------------------------------------------------------------------------------
+1,361,276  events annotated
+

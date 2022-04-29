@@ -151,6 +151,8 @@ int main(int argc, char const *argv[])
 
 	std::cout << "Tempo: " << elapsed.count() << " ms";
 
+	std::cout << std::endl << "Máximo adquirido: " << maxim_glob; 
+
 	// Print da Tabela
 	if (argc == 2) {
 		if (strcmp(argv[1], "-m") == 0) {
@@ -179,7 +181,5 @@ int main(int argc, char const *argv[])
 			}
 		}
 	}
-
-	std::cout << std::endl;
 	return 0;
 }

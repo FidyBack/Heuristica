@@ -146,6 +146,8 @@ E as segintes comparações:
 
 Levando isso em consideração, o resultado atingido foi:
 ```
-
+Score Máximo: 19
+Subsequência Menor: ACC--T-GT-TAGC
+Subsequência Maior: ATT-TT-GT-TAGC
 ```
 Com um tempo levemente variável.

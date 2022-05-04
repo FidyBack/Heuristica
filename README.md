@@ -149,12 +149,3 @@ Levando isso em consideração, o resultado atingido foi:
 
 ```
 Com um tempo levemente variável.
-
-Além disso, também é possível rodar:
-```
-
-```
-Para uma lista completa de todas as Sa geradas, para efeito de comparação:
-```
-
-```

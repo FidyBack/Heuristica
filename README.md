@@ -121,11 +121,30 @@ g++ -Wall -O3 exaustiva.cc -o exaust
 ./exaust < dna.seq
 ```
 
-MUDAR
-Porém, nesse caso, o programa responderá com 3 coisas: Sb, ou o pedaço da sequência 2 que foi utilizado, o valor máximo que foi obtido entre as comparações realizadas e o tempo que levou para o programa ser executado.
+O programa funciona usando o seguinte algoritmo:
+1. A menor sequência é selecionada e todaas suas subsequências são calculadas;
+2. Cada subsequência é comparada com cada elemento da sequência maior.
+ 
+Ou seja, em um exemplo prático, se temos as duas sequências
+```
+ABCD
+123
+```
+O programa fará o seguinte processo:
+```
+123 -> [1, 2, 3, 12, 23, 123];
+```
+E as segintes comparações:
+```
+1 -> A, 1 -> B, 1 -> C, 1 -> D;
+2 -> A, 2 -> B, 2 -> C, 2 -> D;
+3 -> A, 3 -> B, 3 -> C, 3 -> D;
+12 -> AB, 12 -> BC, 12 -> CD;
+23 -> AB, 23 -> BC, 23 -> CD;
+123 -> ABC, 123 -> BCD.
+```
 
-Como o programa foi executado usando uma **seed = 30, os resultados podem ser replicados.**<br/>
-Assim, para esse caso, foi possível extrair os seguintes resultados:
+Levando isso em consideração, o resultado atingido foi:
 ```
 
 ```

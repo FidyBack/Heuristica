@@ -3,20 +3,20 @@ Repositório contendo os projetos relacionados ao alinhamento de sequencias de D
 
 ## **Projeto 1 - Heurística de Alinhamento Local de Smith-Waterman**
 
-A primeira entrega, relacionada ao projeto _Heurística de Alinhamento Local de Smith-Waterman_, está na pasta _Heuristica_Smith_Waterman_. Dentro dele, existem 4 arquivos:
-* **SequenceGenerator.ipynb:** É o arquivo usado para gerar as sequências aleatoriamente;
-* **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
-* **her:** Executável criado a partir de _heuristica.cc_;
-* **heuristica.cc:** Arquivo em C++ que contém o algoritmo em si.
+A primeira entrega, relacionada ao projeto *Heurística de Alinhamento Local de Smith-Waterman*, está na pasta *Heuristica_Smith_Waterman*. Dentro dele, existem 4 arquivos:
+- **SequenceGenerator.ipynb:** É o arquivo usado para gerar as sequências aleatoriamente;
+- **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
+- **her:** Executável criado a partir de *heuristica.cc*;
+- **heuristica.cc:** Arquivo em C++ que contém o algoritmo em si.
  
 Assim, as seguintes sequências foram utilizadas nesse projeto:
 
 **Sequência 1:**<br/>
-_AATCTGGTCTTAGAAACAC-ACC--T-GT-TAGCGCGGGAAACATGCGAT_<br/>
+*AATCTGGTCTTAGAAACAC-ACC--T-GT-TAGCGCGGGAAACATGCGAT*<br/>
 **Tamanho:** 50
 
 **Sequência 2:**<br/>
-_TTTGAGCCA-GG-C-A--TTGCCTGCA-TGTCAATAGA-ACACTCAT-TCG-TGGTG-CC-G--ATG-TA--GG-ACG--TGAC-ATATC--TGCTTCCGTGG-TGC-AGTTATAGAGCATACCAGAACATCGCATTAGGTCTAG-C-G-CTT-AATCCGTCTGTGGGCG--CCATTTAGGTTTACA---AAC-ATACCGA-CGCG-GACTAG-A-TCTAAGTAG---TT-TCTAAC-T--AGAAGTGTTAGA-AC-TGTA-CAGT-TC-TT-CA-AC-T-TCAA-CG--AACAT--ATAGAGTTGAA-C-GCCGGCCAGG-TC-AAGAAATGTCGGTG-CTTCTAACTGC-CTGCATTGTGAT-G-CAC-A-G-GGACTTTTAAG-CGAATCTT-GCTCGTCGCT--CTACACAACTGCATAT--CTA-TAGC-AC--CGGGC-TGGT-A-G-GTCCAAA----ATCTGT--TATACTC-AC-AT-GAAACA--CAG--TC-AATTGGCCA-TCGAAAT-AG--ATTAC--CATCGCAAGATTCTCA-TTC-TGCT-ACAT--CCGCCC-CCAA--CGTCC--TTTACAAACCGAGTCAGCGGT-CTTC-AATT-A--CCGAC-CGAAGTCCC-G-G-TTA-GTCTTG--TCTT-TTG-GGAG-GC-C-AA-ACCGGT-CT--GAATATA--GTGGT--ATAACAG-GAGAGCCCT-CGTCCTA--CAC-GG-TA-TC-TTGG--ATA-TTCGAATT-TT-GT-TAGCCAC-GC-CAA-AAGGAGCGGTC-ATGTCA-AGC-CTTTGCATC-AATG-C-CTC-AAACTATGCAAGCGATGACTCGGTCG-GGGCACG-GGT--TC-CCAC-ATAGTAGCG-CGTTCGCGGC-TC-TATGCAT-TT-GC-A-TTT-CAAGGT-TA-AT-TT-TATCGTT-C-TACCTGA-AG--TATCC-TCTC-TC-GTTGCG--TAATC-G-G-C--CT-ATCC-AGT_<br/>
+*TTTGAGCCA-GG-C-A--TTGCCTGCA-TGTCAATAGA-ACACTCAT-TCG-TGGTG-CC-G--ATG-TA--GG-ACG--TGAC-ATATC--TGCTTCCGTGG-TGC-AGTTATAGAGCATACCAGAACATCGCATTAGGTCTAG-C-G-CTT-AATCCGTCTGTGGGCG--CCATTTAGGTTTACA---AAC-ATACCGA-CGCG-GACTAG-A-TCTAAGTAG---TT-TCTAAC-T--AGAAGTGTTAGA-AC-TGTA-CAGT-TC-TT-CA-AC-T-TCAA-CG--AACAT--ATAGAGTTGAA-C-GCCGGCCAGG-TC-AAGAAATGTCGGTG-CTTCTAACTGC-CTGCATTGTGAT-G-CAC-A-G-GGACTTTTAAG-CGAATCTT-GCTCGTCGCT--CTACACAACTGCATAT--CTA-TAGC-AC--CGGGC-TGGT-A-G-GTCCAAA----ATCTGT--TATACTC-AC-AT-GAAACA--CAG--TC-AATTGGCCA-TCGAAAT-AG--ATTAC--CATCGCAAGATTCTCA-TTC-TGCT-ACAT--CCGCCC-CCAA--CGTCC--TTTACAAACCGAGTCAGCGGT-CTTC-AATT-A--CCGAC-CGAAGTCCC-G-G-TTA-GTCTTG--TCTT-TTG-GGAG-GC-C-AA-ACCGGT-CT--GAATATA--GTGGT--ATAACAG-GAGAGCCCT-CGTCCTA--CAC-GG-TA-TC-TTGG--ATA-TTCGAATT-TT-GT-TAGCCAC-GC-CAA-AAGGAGCGGTC-ATGTCA-AGC-CTTTGCATC-AATG-C-CTC-AAACTATGCAAGCGATGACTCGGTCG-GGGCACG-GGT--TC-CCAC-ATAGTAGCG-CGTTCGCGGC-TC-TATGCAT-TT-GC-A-TTT-CAAGGT-TA-AT-TT-TATCGTT-C-TACCTGA-AG--TATCC-TCTC-TC-GTTGCG--TAATC-G-G-C--CT-ATCC-AGT*<br/>
 **Tamanho:** 1000
 
 É possível rodar o algoritmo com o seguinte comando:
@@ -46,10 +46,10 @@ Além disso, também será mostrado o tempo que levou do começo até o final da
 Para a visualização da matriz completa.
 
 ## **Projeto 2 - Um algoritmo Local para Alinhamento**
-A segunda entrega, que se encontra na pasta _Alinhamento_Local_, possui uma estrutura parecida com a do primeiro projeto, porém com 3 arquivos:
-* **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
-* **ali:** Executável criado a partir de _alinhamento.cc_;
-* **alinhamento.cc:** Arquivo em C++ que contém o algoritmo em si.
+A segunda entrega, que se encontra na pasta *Alinhamento_Local*, possui uma estrutura parecida com a do primeiro projeto, porém com 3 arquivos:
+- **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
+- **ali:** Executável criado a partir de *alinhamento.cc*;
+- **alinhamento.cc:** Arquivo em C++ que contém o algoritmo em si.
 E foram usadas as mesmas sequências com os mesmos tamanhos do projeto 1.
 
 Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execução:
@@ -107,3 +107,45 @@ Sa[28]: CTGGTCTTAGAAACAC-ACC--T-GT-TAGCGCG  Máximo: 16
 Sa[29]: CAC-ACC--T-GT-TAGCGCGGGAAACATGCGAT  Máximo: 20
 Máximo: 20
 ```
+
+## **Projeto 3 - Busca Exaustiva**
+O terceiro projeto, que se encontra na pasta _Busca_Exaustiva_, possui a mesma estrutura do segundo projeto:
+- **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
+- **exaust:** Executável criado a partir de *exaustiva.cc*;
+- **exaustiva.cc:** Arquivo em C++ que contém o algoritmo em si.
+E foram usadas as mesmas sequências com os mesmos tamanhos do projeto 1 e 2.
+
+Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execução dos anteriores:
+```
+g++ -Wall -O3 exaustiva.cc -o exaust
+./exaust < dna.seq
+```
+
+O programa funciona usando o seguinte algoritmo:
+1. A menor sequência é selecionada e todaas suas subsequências são calculadas;
+2. Cada subsequência é comparada com cada elemento da sequência maior.
+ 
+Ou seja, em um exemplo prático, se temos as duas sequências
+```
+ABCD
+123
+```
+O programa fará o seguinte processo:
+```
+123 -> [1, 2, 3, 12, 23, 123];
+```
+E as segintes comparações:
+```
+1 -> A, 1 -> B, 1 -> C, 1 -> D;
+2 -> A, 2 -> B, 2 -> C, 2 -> D;
+3 -> A, 3 -> B, 3 -> C, 3 -> D;
+12 -> AB, 12 -> BC, 12 -> CD;
+23 -> AB, 23 -> BC, 23 -> CD;
+123 -> ABC, 123 -> BCD.
+```
+
+Levando isso em consideração, o resultado atingido foi:
+```
+
+```
+Com um tempo levemente variável.

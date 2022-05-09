@@ -1,0 +1,299 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.63728' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 1148085
+Trigger: Program termination
+Profiled target:  ./her (PID 63728, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   heuristica.cc
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir        
+--------------------------------------------------------------------------------
+6,374,249  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir         file:function
+--------------------------------------------------------------------------------
+2,423,407  heuristica.cc:main [/media/abel/MySSD/Insper/2022_1_7_Semestre/Supercomputacao/Projetos/Relatório_Preliminar/her]
+  957,118  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  644,693  /usr/include/c++/9/tuple:main
+  566,158  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  274,631  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+  256,330  /usr/include/c++/9/bits/vector.tcc:main
+  118,772  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  103,406  /usr/include/c++/9/bits/stl_algo.h:main
+  100,008  /usr/include/c++/9/tuple:void std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_realloc_insert<std::tuple<int, int, int> >(__gnu_cxx::__normal_iterator<std::tuple<int, int, int>*, std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > > >, std::tuple<int, int, int>&&)
+   90,441  /build/glibc-sMfBJT/glibc-2.31/elf/do-rel.h:_dl_relocate_object
+   84,216  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   71,545  /build/glibc-sMfBJT/glibc-2.31/elf/dl-addr.c:_dl_addr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   64,241  ???:std::istream::sentry::sentry(std::istream&, bool) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   56,371  /usr/include/c++/9/bits/stl_vector.h:main
+   51,091  /usr/include/c++/9/bits/stl_iterator.h:main
+   38,336  /build/glibc-sMfBJT/glibc-2.31/libio/getc.c:getc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   37,800  ???:std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char> >(std::basic_istream<char, std::char_traits<char> >&, char&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   34,048  /build/glibc-sMfBJT/glibc-2.31/libio/iofflush.c:fflush [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   26,036  /build/glibc-sMfBJT/glibc-2.31/elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+   25,045  /usr/include/c++/9/bits/stl_uninitialized.h:void std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_realloc_insert<std::tuple<int, int, int> >(__gnu_cxx::__normal_iterator<std::tuple<int, int, int>*, std::vector<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > > >, std::tuple<int, int, int>&&)
+   20,349  /build/glibc-sMfBJT/glibc-2.31/libio/genops.c:_IO_sputbackc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   20,216  /build/glibc-sMfBJT/glibc-2.31/libio/libioP.h:fflush
+   19,198  /build/glibc-sMfBJT/glibc-2.31/libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   17,136  /build/glibc-sMfBJT/glibc-2.31/libio/ioungetc.c:ungetc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   15,915  ???:std::ostream::flush() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   12,128  ???:std::locale::_Impl::_M_install_facet(std::locale::id const*, std::locale::facet const*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   11,309  /build/glibc-sMfBJT/glibc-2.31/libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   10,864  ???:std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+   10,387  /build/glibc-sMfBJT/glibc-2.31/libio/iofwrite.c:fwrite [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+   10,182  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:_dl_relocate_object
+    9,644  /usr/include/c++/9/bits/move.h:main
+    9,639  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    8,960  /build/glibc-sMfBJT/glibc-2.31/wcsmbs/btowc.c:btowc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    8,605  /build/glibc-sMfBJT/glibc-2.31/elf/dl-version.c:_dl_check_map_versions [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    8,472  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::uflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    8,383  /build/glibc-sMfBJT/glibc-2.31/elf/dl-tunables.h:__GI___tunables_init
+    7,505  /build/glibc-sMfBJT/glibc-2.31/elf/../elf/dl-runtime.c:_dl_fixup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    6,564  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
+    4,265  ???:0x00000000048eb130 [???]
+    4,242  ???:std::ostream::sentry::sentry(std::ostream&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    3,529  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__mempcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    3,528  /build/glibc-sMfBJT/glibc-2.31/libio/libioP.h:fwrite
+    3,303  /build/glibc-sMfBJT/glibc-2.31/elf/dl-cache.c:_dl_cache_libcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,186  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:_dl_map_object_from_fd [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    3,183  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::sync() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    3,062  /build/glibc-sMfBJT/glibc-2.31/elf/dl-misc.c:_dl_name_match_p [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,952  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave'2 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,816  /build/glibc-sMfBJT/glibc-2.31/wcsmbs/wctob.c:wctob [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,782  /build/glibc-sMfBJT/glibc-2.31/libio/fileops.c:_IO_file_overflow@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,733  ???:std::ctype<wchar_t>::_M_initialize_ctype() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,548  ???:__dynamic_cast [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    2,508  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    2,239  /build/glibc-sMfBJT/glibc-2.31/elf/dl-deps.c:_dl_map_object_deps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,147  ???:0x00000000048e8880 [???]
+    2,133  ???:0x00000000048eb080 [???]
+    2,128  /build/glibc-sMfBJT/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:fflush
+    2,127  ???:0x00000000048e9530 [???]
+    2,109  ???:0x00000000048ea6a0 [???]
+    2,105  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:_dl_map_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    2,100  ???:0x0000000000109210 [???]
+    1,608  /build/glibc-sMfBJT/glibc-2.31/elf/get-dynamic-info.h:_dl_map_object_from_fd
+    1,480  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+    1,447  /build/glibc-sMfBJT/glibc-2.31/elf/dl-load.c:open_verify.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,408  /build/glibc-sMfBJT/glibc-2.31/elf/dl-sort-maps.c:_dl_sort_maps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,233  /build/glibc-sMfBJT/glibc-2.31/elf/dl-cache.c:_dl_load_cache_lookup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,200  /build/glibc-sMfBJT/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:__strlen_avx2 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    1,187  /build/glibc-sMfBJT/glibc-2.31/elf/dl-object.c:_dl_new_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    1,176  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::xsputn(char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28]
+
+--------------------------------------------------------------------------------
+-- User-annotated source: heuristica.cc
+--------------------------------------------------------------------------------
+Ir      
+
+-- line 2 ----------------------------------------
+      .  #include <algorithm>
+      .  #include <string.h>
+      .  #include <chrono> 
+      .  #include <cmath>
+      .  #include <vector>
+      .  #include <tuple>
+      .  
+      .  int main(int argc, char const *argv[])
+     13  {
+      .  	std::vector<char> seq1, seq2;
+      .  	std::vector<std::tuple<int, int, int>> matr;
+      .  
+      .  	// Inputs
+      1  	int n, m = 0;
+      6  	std::cin >> n >> m;
+  8,419  => ???:0x0000000000109190 (2x)
+      4  	seq1.reserve(n);
+    242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      4  	seq2.reserve(m);
+    228  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      4  	matr.reserve(n*m);
+      .  
+    204  	for (int i = 0; i < n; i++) {
+      .  		char k;
+    151  		std:: cin >> k;
+ 14,517  => ???:0x0000000000109210 (50x)
+      .  		seq1.push_back(k);
+      .  	}
+      .  
+  4,005  	for (int i = 0; i < m; i++) {
+      .  		char k;
+  3,001  		std::cin >> k;
+288,117  => ???:0x0000000000109210 (1,000x)
+      .  		seq2.push_back(k);
+      .  	}
+      .  
+      .  	// Medida de tempo
+      2  	auto start = std::chrono::high_resolution_clock::now();
+    937  => ???:0x0000000000109160 (1x)
+      .  	
+      .  	// Cálculo da matriz - O vetor matr tem composição matr[(Valor, Index, Index_Origem)]
+    209  	for (int i = 0; i <= n; i++) {
+204,563  		for (int j = 0; j <= m; j++) {
+254,102  			if (i == 0 || j == 0) {
+  4,204  				matr.push_back(std::make_tuple(0, i*(m+1)+j, 0));
+      .  			}
+      .  			else {
+      .  				// Calcula Diagonal, Na esquerda e Acima
+      .  				int diag = 0;
+600,000  				if (seq1[i-1] == seq2[j-1]) {
+ 10,009  					diag = std::get<0>(matr[(i-1)*(m+1)+(j-1)]) + 2;
+      .  				}
+      .  				else {
+ 50,000  					diag = std::get<0>(matr[(i-1)*(m+1)+(j-1)]) - 1;
+      .  				}
+300,000  				int inser = std::get<0>(matr[i*(m+1)+(j-1)]) - 1;
+350,000  				int del = std::get<0>(matr[(i-1)*(m+1)+j]) - 1;
+      .  
+      .  				// Procura o maior valor e armazena na tupla (valor, index)
+107,464  				if (diag < 0 && inser < 0 && del < 0) {
+      .  					matr.push_back(std::make_tuple(0, i*(m+1)+j, i*(m+1)+j));
+      .  				}
+239,360  				else if (diag >= inser && diag >= del) {
+      .  					matr.push_back(std::make_tuple(diag, i*(m+1)+j, (i-1)*(m+1)+(j-1)));
+      .  				}
+ 39,334  				else if (inser > del) {
+      .  					matr.push_back(std::make_tuple(inser, i*(m+1)+j, i*(m+1)+(j-1)));
+      .  				}
+      .  				else {
+      .  					matr.push_back(std::make_tuple(del, i*(m+1)+j, (i-1)*(m+1)+j));
+      .  				}
+      .  			}
+      .  		}
+      .  	}
+      .  
+      .  	// Valor máximo na matriz
+      1  	int maxim_glob = std::get<0>(*std::max_element(matr.begin(), matr.end()));
+      .  
+      .  	// Procura o índice do valor máximo
+      .  	std::vector<std::tuple<int, int, int>> elements;
+151,726  	for (auto l : matr) {
+101,152  		if (std::get<0>(l) == maxim_glob) {
+      .  			elements.push_back(std::make_tuple(std::get<0>(l), std::get<1>(l), std::get<2>(l)));
+      .  			break;
+      .  		}
+      .  	}
+      .  
+      .  	// Pega o elemento que originou aquela casa da matriz até chegar em 0
+      3  	int index = std::get<2>(elements[0]);
+    126  	while (index > 0) {
+    252  		std::tuple<int, int, int> next = matr[index];
+      .  		elements.push_back(next);
+    189  		if (std::get<0>(matr[index]) != 0) {
+     62  			index = std::get<2>(matr[index]);
+      .  		} else {
+      .  			index = 0;
+      .  		}
+      .  	}
+      .  
+      .  	// Criação da resposta
+      .  	std::vector<char> new_seq1, new_seq2, simb_seq;
+      4  	new_seq1.reserve(elements.size()-1);
+    242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      4  	new_seq2.reserve(elements.size()-1);
+    242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      4  	simb_seq.reserve(elements.size()-1);
+    242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+      .  
+      .  	int line, column = 0;
+    326  	for (int i = int(elements.size()-1); i >= 0; i--) {
+      .  
+      .  		// Para pegar da lista, é necessário fazer a divisão e subtrair -1
+    315  		line = std::floor(std::get<1>(elements[i])/(m+1))-1;
+    189  		column = std::floor(std::get<1>(elements[i])%(m+1))-1;
+      .  
+    192  		if (std::get<0>(elements[i]) == 0);
+      .  
+    504  		else if (std::get<1>(elements[i])-(m+2) == std::get<2>(elements[i])) {
+    440  			if (std::get<0>(elements[i]) == std::get<0>(elements[i+1])+2) {
+     79  				new_seq1.push_back(seq1[line]);
+    280  => /usr/include/c++/9/bits/stl_vector.h:std::vector<char, std::allocator<char> >::push_back(char const&) (35x)
+    105  				new_seq2.push_back(seq2[column]);
+    280  => /usr/include/c++/9/bits/stl_vector.h:std::vector<char, std::allocator<char> >::push_back(char const&) (35x)
+     35  				simb_seq.push_back('*');
+      .  			} else {
+      9  				new_seq1.push_back(seq1[line]);
+     72  => /usr/include/c++/9/bits/stl_vector.h:std::vector<char, std::allocator<char> >::push_back(char const&) (9x)
+     27  				new_seq2.push_back(seq2[column]);
+     72  => /usr/include/c++/9/bits/stl_vector.h:std::vector<char, std::allocator<char> >::push_back(char const&) (9x)
+      9  				simb_seq.push_back('|');
+      .  			}
+      .  		}
+     76  		else if (std::get<1>(elements[i])-(m+1) == std::get<2>(elements[i])) {
+     18  			new_seq1.push_back(seq1[line]);
+     48  => /usr/include/c++/9/bits/stl_vector.h:std::vector<char, std::allocator<char> >::push_back(char const&) (6x)
+      6  			new_seq2.push_back('_');
+      .  			simb_seq.push_back(' ');
+      .  		}
+     39  		else if (std::get<1>(elements[i])-1 == std::get<2>(elements[i])) {
+     13  			new_seq1.push_back('_');
+     52  			new_seq2.push_back(seq2[column]);
+    104  => /usr/include/c++/9/bits/stl_vector.h:std::vector<char, std::allocator<char> >::push_back(char const&) (13x)
+     19  			simb_seq.push_back(' ');
+      .  		}
+      .  	}
+      .  
+      .  	// Medida de tempo
+      1  	auto end = std::chrono::high_resolution_clock::now();
+     40  => ???:0x0000000000109160 (1x)
+      .  	std::chrono::duration<double, std::milli> elapsed = end - start;
+      .  	
+      .  	std::cout << "-------------------------------------------------------------------------" << std::endl;
+    257  	for (auto k : new_seq1) {
+      .  		std::cout << k;
+      .  	}
+      .  	std::cout << std::endl;
+    257  	for (auto l : simb_seq) {
+      .  		std::cout << l;
+      .  	}
+      .  	std::cout << std::endl;
+    257  	for (auto n : new_seq2) {
+      .  		std::cout << n;
+      .  	}
+      .  	std::cout << std::endl;
+      .  	std::cout << "-------------------------------------------------------------------------"  << std::endl;
+      .  
+      2  	std::cout << "Tempo: " << elapsed.count() << " ms";
+  2,209  => ???:0x00000000001091d0 (1x)
+      .  
+      3  	std::cout << std::endl << "Máximo adquirido: " << maxim_glob; 
+  2,493  => ???:0x0000000000109260 (1x)
+      .  
+      .  	// Print da Tabela
+      2  	if (argc == 2) {
+      .  		if (strcmp(argv[1], "-m") == 0) {
+      .  			std::cout << std::endl << "Tabela:" << std::endl;
+      .  			std::cout << "    ";
+      .  			for (char x : seq2) {
+      .  				std::cout << x << " ";
+      .  			}
+      .  			std::cout << std::endl;
+      .  
+-- line 165 ----------------------------------------
+-- line 177 ----------------------------------------
+      .  					ak = 1;
+      .  				}
+      .  				std::cout << std::get<0>(l) << " ";
+      .  				ak++;
+      .  			}
+      .  		}
+      .  	}
+      .  	return 0;
+     15  }
+
+--------------------------------------------------------------------------------
+Ir        
+--------------------------------------------------------------------------------
+2,423,410  events annotated
+

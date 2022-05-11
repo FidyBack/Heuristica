@@ -153,7 +153,7 @@ Subsequência Maior: ATT-TT-GT-TAGC
 Com um tempo levemente variável.
 
 ## **Relatório Intermediário**
-O Relatório Intermediário está localizado dentro do diretório *Relatorio_Preliminar*, e possui tanto a extensão .ipynb qunato .html [que pode ser vista aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
+O Relatório Intermediário está localizado dentro do diretório *Relatorio_Preliminar*, e possui tanto a extensão .ipynb qunato .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
 
 Caso seja necessário baixar e testar os algoritmos, é necessário descompactar as entradas presentes em *Entradas/entradas_8*
 

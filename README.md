@@ -157,4 +157,5 @@ O Relatório Intermediário está localizado dentro do diretório *Relatorio_Pre
 
 Caso seja necessário baixar e testar os algoritmos, é necessário descompactar as entradas presentes em *Entradas/entradas_8*
 
-## **Projeto 4 - Busca Exaustiva**
+## **Projeto 4 - OpenMP**
+

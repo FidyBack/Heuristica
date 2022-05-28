@@ -158,4 +158,14 @@ O Relatório Intermediário está localizado dentro do diretório *Relatorio_Pre
 Caso seja necessário baixar e testar os algoritmos, é necessário descompactar as entradas presentes em *Entradas/entradas_8*.
 
 ## **Projeto 4 - OpenMP**
+O quarto projeto, que se encontra na pasta _OpenMP_, possui a mesma estrutura do segundo e terceiro projeto:
+- **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
+- **open:** Executável criado a partir de *openmp.cc*;
+- **openmp.cc:** Arquivo em C++ que contém o algoritmo em si.
+E foram usadas as mesmas sequências com os mesmos tamanhos dos outros projetos.
 
+Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execução dos anteriores:
+```
+g++ -Wall -O3 -fopenmp openmp.cc -o open
+./open < dna.seq
+```

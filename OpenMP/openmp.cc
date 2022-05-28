@@ -1,9 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
+#include <omp.h>
 
 
 int main(int argc, char const *argv[]) {
+
+	// Threads
+	omp_set_num_threads(4);
+
 	// Inputs
 	std::vector<char> seq1, seq2;
 	int n, m = 0;
@@ -27,9 +32,15 @@ int main(int argc, char const *argv[]) {
 	auto start = std::chrono::high_resolution_clock::now();
 
 	// Define seq1 como a maior sequencia
-	if (n < m) {
-		std::swap(seq1, seq2);
-		std::swap(n, m);
+	#pragma omp parallel
+	{
+		#pragma omp single
+		{
+			if (n < m) {
+				std::swap(seq1, seq2);
+				std::swap(n, m);
+			}
+		}
 	}
 
 	// Divide seq2 em todas as subsequencias de todos os tamanhos possiveis
@@ -46,14 +57,13 @@ int main(int argc, char const *argv[]) {
 
 	// Compara as subsequências
 	int max_score = 0;
-	std::vector<char> max_subseq_minnor, max_subseq_major;
+	#pragma omp parallel for reduction(max:max_score)
 	for (int i = 0; i < n; i++) {
+		#pragma omp parallel for reduction(max:max_score)
 		for (int j = 0; j < int(subseqs.size()); j++) {
 			int score = 0;
-			std::vector<char> seq1_subseq;
 			if (i+int(subseqs[j].size()) <= n) {
 				for (int k = 0; k < int(subseqs[j].size()); k++) {
-					seq1_subseq.push_back(seq1[i+k]);
 					if (seq1[i+k] == subseqs[j][k]) {
 						score += 2;
 					}
@@ -63,8 +73,6 @@ int main(int argc, char const *argv[]) {
 				}
 				if (score > max_score) {
 					max_score = score;
-					max_subseq_minnor = subseqs[j];
-					max_subseq_major = seq1_subseq;
 				}
 			}
 		}
@@ -72,16 +80,6 @@ int main(int argc, char const *argv[]) {
 
 
 	std::cout <<"Score Máximo: " << max_score << std::endl;
-	std::cout <<"Subsequência Menor: ";
-	for (int i = 0; i < int(max_subseq_minnor.size()); i++) {
-		std::cout << max_subseq_minnor[i];
-	}
-	std::cout << std::endl;
-	std::cout <<"Subsequência Maior: ";
-	for (int i = 0; i < int(max_subseq_major.size()); i++) {
-		std::cout << max_subseq_major[i];
-	}
-	std::cout << std::endl;
 
 	// Medida de tempo
 	auto end = std::chrono::high_resolution_clock::now();

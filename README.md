@@ -169,3 +169,15 @@ Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execuçã
 g++ -Wall -O3 -fopenmp openmp.cc -o open
 ./open < dna.seq
 ```
+Esse programa foi feito baseando-se no algorítimo do projeto 3, e tem como objetivo paralelizar o mesmo. Levando isso em conta, é possível observar três pontos principais no código original:  
+<p align="center">
+  <img src="/OpenMP/Imagens/firstPart.png">
+</p>
+
+<p align="center">
+  <img src="/OpenMP/Imagens/secondPart.png">
+</p>
+
+<p align="center">
+  <img src="/OpenMP/Imagens/thirdPart.png">
+</p>

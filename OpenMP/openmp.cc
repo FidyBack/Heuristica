@@ -35,12 +35,10 @@ int main(int argc, char const *argv[]) {
 	#pragma omp parallel
 	{
 		#pragma omp single
-		{
 			if (n < m) {
 				std::swap(seq1, seq2);
 				std::swap(n, m);
 			}
-		}
 	}
 
 	// Divide seq2 em todas as subsequencias de todos os tamanhos possiveis

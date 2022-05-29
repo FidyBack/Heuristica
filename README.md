@@ -163,21 +163,36 @@ O quarto projeto, que se encontra na pasta _OpenMP_, possui a mesma estrutura do
 - **open:** Executável criado a partir de *openmp.cc*;
 - **openmp.cc:** Arquivo em C++ que contém o algoritmo em si.
 E foram usadas as mesmas sequências com os mesmos tamanhos dos outros projetos.
-
+ 
 Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execução dos anteriores:
 ```
 g++ -Wall -O3 -fopenmp openmp.cc -o open
 ./open < dna.seq
 ```
-Esse programa foi feito baseando-se no algorítimo do projeto 3, e tem como objetivo paralelizar o mesmo. Levando isso em conta, é possível observar três pontos principais no código original:  
+Esse programa foi feito baseando-se no algoritmo do projeto 3, e tem como objetivo paralelizar o mesmo. Levando isso em conta, é possível observar três pontos principais no código original:  
+ 
 <p align="center">
   <img src="/OpenMP/Imagens/firstPart.png">
 </p>
-
+ 
 <p align="center">
   <img src="/OpenMP/Imagens/secondPart.png">
 </p>
-
+ 
 <p align="center">
   <img src="/OpenMP/Imagens/thirdPart.png">
+</p>
+ 
+Analisando cada uma delas, é possível perceber que, por fazer chamadas de push_back, paralelizar a segunda parte do código não seria vantajoso, porém, as outras partes aceitam paralelização. Levando isso em conta, cada parte do código será paralelizada de maneira diferente:
+ 
+A primeira parte usará *#pragma omp parallel* juntamente com *#pragma omp single*
+ 
+<p align="center">
+  <img src="/OpenMP/Imagens/firstPartChanged.png">
+</p>
+ 
+Já a terceira será paralelizada usando *#pragma omp parallel for reduction(max:max_score)*
+ 
+<p align="center">
+  <img src="/OpenMP/Imagens/thirdPartChanged.png">
 </p>

@@ -1,0 +1,147 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.99233' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 50255652
+Trigger: Program termination
+Profiled target:  ./exaust (PID 99233, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   exaustiva.cc
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir          
+--------------------------------------------------------------------------------
+211,075,336  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir           file:function
+--------------------------------------------------------------------------------
+171,393,484  exaustiva.cc:main [/media/abel/MySSD/Insper/2022_1_7_Semestre/Supercomputacao/Projetos/Relatório_Preliminar/Codigos/exaust]
+ 35,022,225  /usr/include/c++/9/bits/stl_vector.h:main
+    957,895  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    566,810  /build/glibc-sMfBJT/glibc-2.31/elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    496,471  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:_int_free [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    311,616  /build/glibc-sMfBJT/glibc-2.31/malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    274,816  /build/glibc-sMfBJT/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+
+--------------------------------------------------------------------------------
+-- User-annotated source: exaustiva.cc
+--------------------------------------------------------------------------------
+Ir         
+
+-- line 3 ----------------------------------------
+         .  #include <chrono>
+         .  
+         .  
+         .  #include <algorithm>
+         .  #include <functional>
+         .  #include <array>
+         .  #include <string_view>
+         .  
+        11  int main(int argc, char const *argv[]) {
+         .  	// Inputs
+         .  	std::vector<char> seq1, seq2;
+         1  	int n, m = 0;
+         6  	std::cin >> n >> m;
+     8,419  => ???:0x00000000001091e0 (2x)
+         4  	seq1.reserve(n);
+       242  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+         4  	seq2.reserve(m);
+       228  => /usr/include/c++/9/bits/vector.tcc:std::vector<char, std::allocator<char> >::reserve(unsigned long) (1x)
+         .  
+       205  	for (int i = 0; i < n; i++) {
+         .  		char z;
+       151  		std:: cin >> z;
+    14,517  => ???:0x0000000000109260 (50x)
+         .  		seq1.push_back(z);
+         .  	}
+         .  
+     4,005  	for (int i = 0; i < m; i++) {
+         .  		char z;
+     3,001  		std::cin >> z;
+   288,117  => ???:0x0000000000109260 (1,000x)
+         .  		seq2.push_back(z);
+         .  	}
+         .  
+         .  	// Medida de tempo
+         2  	auto start = std::chrono::high_resolution_clock::now();
+       937  => ???:0x0000000000109190 (1x)
+         .  
+         .  	// Define seq1 como a maior sequencia
+         4  	if (n < m) {
+         .  		std::swap(seq1, seq2);
+         .  		std::swap(n, m);
+         .  	}
+         .  
+         .  	// Divide seq2 em todas as subsequencias de todos os tamanhos possiveis
+         2  	std::vector<std::vector<char>> subseqs;
+   221,938  => /usr/include/c++/9/bits/stl_vector.h:std::vector<std::vector<char, std::allocator<char> >, std::allocator<std::vector<char, std::allocator<char> > > >::~vector() (1x)
+       256  	for (int i = 0; i < m; i++) {
+     2,550  		for (int j = 0; j <= i; j++) {
+         .  			std::vector<char> subseq;
+   100,213  			for (int k = j; k <= i; k++) {
+         .  				subseq.push_back(seq2[k]);
+         .  			}
+         .  			subseqs.push_back(subseq);
+         .  		}
+         .  	}
+         .  
+         .  	// Compara as subsequências
+         2  	int max_score = 0;
+         .  	std::vector<char> max_subseq;
+     3,004  	for (int i = 0; i < n; i++) {
+ 2,555,000  		for (int j = 0; j < int(subseqs.size()); j++) {
+ 3,825,000  			int score = 0;
+72,675,000  			for (int k = 0; k < int(subseqs[j].size()); k++) {
+67,575,000  				if (seq1[i+k] == subseqs[j][k]) {
+ 4,426,389  					score += 2;
+         .  				}
+         .  				else {
+17,673,611  					score -= 1;
+         .  				}
+         .  			}
+ 2,550,000  			if (score > max_score) {
+         .  				max_score = score;
+         .  				max_subseq = subseqs[j];
+         .  			}
+         .  			// std::cout << "Sequence: ";
+         .  			// for (int k = 0; k < int(subseqs[j].size()); k++) {
+         .  			// 	std::cout << subseqs[j][k];
+         .  			// }
+         .  			// std::cout << " Score: " << score << std::endl;
+         .  		}
+         .  	}
+         .  
+         4  	std::cout <<"Score Máximo: " << max_score << std::endl;
+     5,206  => ???:0x00000000001092c0 (1x)
+         3  	std::cout <<"Subsequência: ";
+     2,273  => ???:0x0000000000109220 (1x)
+        29  	for (int i = 0; i < int(max_subseq.size()); i++) {
+        12  		std::cout << max_subseq[i];
+         .  	}
+         .  	std::cout << std::endl;
+         .  
+         .  
+         .  	// Medida de tempo
+         1  	auto end = std::chrono::high_resolution_clock::now();
+        40  => ???:0x0000000000109190 (1x)
+         .  	std::chrono::duration<double, std::milli> elapsed = end - start;
+         2  	std::cout << "Tempo: " << elapsed.count() << " ms";
+       287  => ???:0x0000000000109220 (1x)
+         .  	std::cout << std::endl;
+         .  
+         .  	return 0;
+        15  }
+
+--------------------------------------------------------------------------------
+Ir          
+--------------------------------------------------------------------------------
+171,393,487  events annotated
+

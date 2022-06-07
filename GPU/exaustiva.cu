@@ -1,8 +1,29 @@
 #include <thrust/device_vector.h>
 #include <thrust/host_vector.h>
+#include <thrust/functional.h>
+#include <thrust/transform.h>
 #include <iostream>
 #include <vector>
 #include <chrono>
+
+
+// struct calculate_score 
+// {
+// 	int score;
+// 	__host__ __device__
+// 	int operator()(const char &lhs, const char &rhs) 
+// 	{
+// 	for (int i = 0; i < lhs.size(); i++) {
+// 		if (lhs == rhs) {
+// 			score += 2;
+// 		}
+// 		else {
+// 			score -= 1;
+// 		}
+// 	}
+// 	return score;
+//   }
+// };
 
 
 int main(int argc, char const *argv[]) {
@@ -34,43 +55,35 @@ int main(int argc, char const *argv[]) {
 	// Medida de tempo
 	auto start = std::chrono::high_resolution_clock::now();
 
-	// Divide seq2 em todas as subsequencias de todos os tamanhos possiveis
-	std::vector<std::vector<char>> subseqs;
+	// Divide seq2 em indexes de subsequencias e manda para a GPU
+	std::vector<int> subseqs;
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j <= i; j++) {
-			std::vector<char> subseq;
-			for (int k = j; k <= i; k++) {
-				subseq.push_back(seq2[k]);
+			if (j != i) {
+				for (int k = j; k <= i; k++) {
+					if (k == j || k == i) {
+						subseqs.push_back(k);
+					}
+				}
 			}
-			subseqs.push_back(subseq);
 		}
 	}
 
-	// // Compara as subsequências
-	// int max_score = 0;
-	// std::vector<char> max_subseq_minnor, max_subseq_major;
-	// for (int i = 0; i < n; i++) {
-	// 	for (int j = 0; j < int(subseqs.size()); j++) {
-	// 		int score = 0;
-	// 		std::vector<char> seq1_subseq;
-	// 		if (i+int(subseqs[j].size()) <= n) {
-	// 			for (int k = 0; k < int(subseqs[j].size()); k++) {
-	// 				seq1_subseq.push_back(seq1[i+k]);
-	// 				if (seq1[i+k] == subseqs[j][k]) {
-	// 					score += 2;
-	// 				}
-	// 				else {
-	// 					score -= 1;
-	// 				}
-	// 			}
-	// 			if (score > max_score) {
-	// 				max_score = score;
-	// 				max_subseq_minnor = subseqs[j];
-	// 				max_subseq_major = seq1_subseq;
-	// 			}
-	// 		}
-	// 	}
-	// }
+	thrust::device_vector<int> vgpu_indexes(subseqs);
+	thrust::device_vector<int> vgpu_out(subseqs.size());
+
+	// Compara as subsequências na GPU
+	for (int i = 0; i < int(vgpu_indexes.size()); i+=2) {
+		for (int j = 0; j < n; j++) {
+			if ((vgpu_indexes[i+1] - vgpu_indexes[i] - j) < m) {
+				std::cout << vgpu_seq2[i] << " " << vgpu_seq2[i+1] << std::endl;
+			// 	std::cout << vgpu_seq1[j] << " " << vgpu_seq1[j + (vgpu_indexes[i+1] - vgpu_indexes[i])] << std::endl;
+				// thrust::transform(vgpu_seq2.begin() + vgpu_indexes[i], vgpu_seq2.begin() + vgpu_indexes[i+1], vgpu_seq1.begin() + j, vgpu_out.begin() + j, thrust::equal_to<char>());
+				// std::cout << vgpu_out[j] << std::endl;
+			}
+		}
+	}
+	
 
 
 	// std::cout <<"Score Máximo: " << max_score << std::endl;

@@ -6,24 +6,27 @@
 #include <vector>
 #include <chrono>
 
+template<typename T = void>
+struct calculate_score
+{
+	int score;
+	calculate_score(int score) : score(score) {};
 
-// struct calculate_score 
-// {
-// 	int score;
-// 	__host__ __device__
-// 	int operator()(const char &lhs, const char &rhs) 
-// 	{
-// 	for (int i = 0; i < lhs.size(); i++) {
-// 		if (lhs == rhs) {
-// 			score += 2;
-// 		}
-// 		else {
-// 			score -= 1;
-// 		}
-// 	}
-// 	return score;
-//   }
-// };
+	typedef T first_argument_type;
+	typedef T second_argument_type;
+	typedef int result_type;
+
+    __host__ __device__
+    int operator()(const T &x, const T &y) {
+		if (x == y) {
+			score = 2;
+		}
+		else {
+			score = -1;
+		}
+        return score;
+    }
+};
 
 
 int main(int argc, char const *argv[]) {
@@ -41,15 +44,20 @@ int main(int argc, char const *argv[]) {
 		std::cin >> vcpu_seq2[i];
 	}
 
-	// Define seq1 como a maior sequencia
+	// Define seq1 e n como a maior sequencia
 	if (n < m) {
 		std::swap(vcpu_seq1, vcpu_seq2);
 		std::swap(n, m);
 	}
 
+	// Define vetor de scores
+	thrust::host_vector<int> vcpu_score(n); // TESTE
+	thrust::fill(vcpu_score.begin(), vcpu_score.end(), 0); // TESTE
+
 	// Passa para a GPU
-	thrust::device_vector<char> vgpu_seq1(vcpu_seq1); 
-	thrust::device_vector<char> vgpu_seq2(vcpu_seq2); 
+	thrust::device_vector<char> vgpu_seq1(vcpu_seq1);
+	thrust::device_vector<char> vgpu_seq2(vcpu_seq2);
+	thrust::device_vector<int> vgpu_score(vcpu_score);
 
 
 	// Medida de tempo
@@ -68,25 +76,36 @@ int main(int argc, char const *argv[]) {
 			}
 		}
 	}
-
 	thrust::device_vector<int> vgpu_indexes(subseqs);
-	thrust::device_vector<int> vgpu_out(subseqs.size());
+
 
 	// Compara as subsequências na GPU
+	int score = 0, max_score = 0;
 	for (int i = 0; i < int(vgpu_indexes.size()); i+=2) {
 		for (int j = 0; j < n; j++) {
-			if ((vgpu_indexes[i+1] - vgpu_indexes[i] - j) < m) {
-				std::cout << vgpu_seq2[i] << " " << vgpu_seq2[i+1] << std::endl;
-			// 	std::cout << vgpu_seq1[j] << " " << vgpu_seq1[j + (vgpu_indexes[i+1] - vgpu_indexes[i])] << std::endl;
-				// thrust::transform(vgpu_seq2.begin() + vgpu_indexes[i], vgpu_seq2.begin() + vgpu_indexes[i+1], vgpu_seq1.begin() + j, vgpu_out.begin() + j, thrust::equal_to<char>());
-				// std::cout << vgpu_out[j] << std::endl;
+			int tam_subseq = vgpu_indexes[i+1] - vgpu_indexes[i];
+			if (tam_subseq + j <= vgpu_seq1.size()) {
+				std::cout << vgpu_indexes[i] << " " << vgpu_indexes[i+1] << std::endl;
+				thrust::transform(vgpu_seq2.begin()+vgpu_indexes[i], vgpu_seq2.end()+vgpu_indexes[i+1], vgpu_seq1.begin()+j, vgpu_score.begin(), calculate_score<char>(score));
+
+				std::cout << vgpu_seq2[vgpu_indexes[i]] << " " << vgpu_seq2[vgpu_indexes[i+1]] << " " << std::endl;
+				for (int k = 0; k < vgpu_score.size(); k++) {
+					std::cout << vgpu_score[k] << " ";
+				}
+				std::cout << std::endl;
+				thrust::fill(vgpu_score.begin(), vgpu_score.end(), 0);
+				// max_score = thrust::reduce(vgpu_score.begin(), vgpu_score.end(), 0) > max_score ? thrust::reduce(vgpu_score.begin(), vgpu_score.end(), 0) : max_score;
+				// std::cout << "Score: " << max_score << std::endl;
+				// thrust::fill(vgpu_score.begin(), vgpu_score.end(), 0);
 			}
 		}
 	}
-	
+
+	// std::cout << max_score << std::endl;
 
 
-	// std::cout <<"Score Máximo: " << max_score << std::endl;
+
+ 	// std::cout <<"Score Máximo: " << max_score << std::endl;
 	// std::cout <<"Subsequência Menor: ";
 	// for (int i = 0; i < int(max_subseq_minnor.size()); i++) {
 	// 	std::cout << max_subseq_minnor[i];

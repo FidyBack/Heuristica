@@ -153,7 +153,7 @@ Subsequência Maior: ATT-TT-GT-TAGC
 Com um tempo levemente variável.
 
 ## **Relatório Intermediário**
-O Relatório Intermediário está localizado dentro do diretório *Relatorio_Preliminar*, e possui tanto a extensão .ipynb qunato .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
+O Relatório Intermediário está localizado dentro do diretório *Relatorio_Preliminar*, e possui tanto a extensão .ipynb quanto .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
 
 Caso seja necessário baixar e testar os algoritmos, é necessário descompactar as entradas presentes em *Entradas/entradas_8*.
 
@@ -200,7 +200,7 @@ Já a terceira será paralelizada usando *#pragma omp parallel for reduction(max
 </p>
 
 ## **Projeto 5 - GPU**
-O quinto e ultimo projeto, que se encontra na pasta *GPU*, possui a mesma estrutura do segundo, terceiro e quarto projeto:
+O quinto e último projeto, que se encontra na pasta *GPU*, possui a mesma estrutura do segundo, terceiro e quarto projeto:
 - **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
 - **gpu:** Executável criado a partir de *openmp.cc*;
 - **gpu.cu:** Arquivo em CUDA que contém o algoritmo em si.
@@ -211,20 +211,20 @@ Tendo isso em mente, o projeto possui um sistema de compilação um tanto único
 nvcc -arch=sm_70 -std=c++14 gpu.cu -o gpu
 ./gpu < dna.seq
 ```
-Por sua estrutura ser baseada em CUDA, é necessário a compilação usando *nvcc* ao invés de *g++* ou *g++*. Além disso, flags especiais são necessárias. A flag *-arch=sm_70*, de acordo com a documentação oficial da Nvidia para a linguagem CUDA:
+Por sua estrutura ser baseada em CUDA, é necessário a compilação usando *nvcc* ao invés de *g++* ou *gcc*. Além disso, flags especiais são necessárias. A flag *-arch=sm_70*, de acordo com a documentação oficial da Nvidia para a linguagem CUDA:
 
 
 > Specify the name of the class of NVIDIA virtual GPU architecture for which the CUDA input files must be compiled.
 
-Assim, nesse caso, a arquitetura da GPU utilizada no mosntão é a *sm_70*. Já a flag *-std=c++14* basicamente define qual versão do C++ será utilizada, já que CUDA é uma extensão do C++.
+Assim, nesse caso, a arquitetura da GPU utilizada no monstão é a *sm_70*. Já a flag *-std=c++14* basicamente define qual versão do C++ será utilizada, já que CUDA é uma extensão do C++.
 
 Esse programa foi feito baseando-se no algoritmo do projeto 3, e tem como objetivo executá-lo em uma GPU utilizando a biblioteca **THRUST**. Para isso, é necessário realizar uma série de mudanças e adições em relação ao código original:
 
 1. Foram importadas as bibliotecas do Thrust que serão utilizadas:
-2. Um struct *calculate_score* foi sdicionado. Ele pega dois elementos do tipo 'char' e devolve 2 se forem iguais, se não, ele retorna -1:
+2. Um struct *calculate_score* foi adicionado. Ele pega dois elementos do tipo 'char' e devolve 2 se forem iguais, se não, ele retorna -1:
 3. Os vetores são inicialmente armazenados em iteradores do tipo *thrust::host_vector<char>*, e posteriormente convertidos para *thrust::device_vector<char>*:
-4. Ao invés de armazenar as subsequências, agora um *thrust::device_vector* armazena os indices iniciais e finais de cada subsequência:
+4. Ao invés de armazenar as subsequências, agora um *thrust::device_vector* armazena os índices iniciais e finais de cada subsequência:
 5. As subsequências são comparadas usando um *thrust::transform*, e o resultado é armazenado em um terceiro vetor, que tem seus elementos somados usando o *thrust::reduce* e o score máximo é obtido:
 
  ## **Relatório Final**
-O Relatório Final está localizado dentro do diretório *Relatorio_Final*, e possui tanto a extensão .ipynb qunato .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Final/Relatorio_Abel.html).
+O Relatório Final está localizado dentro do diretório *Relatorio_Final*, e possui tanto a extensão .ipynb quanto .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Final/Relatorio_Abel.html).

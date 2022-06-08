@@ -227,4 +227,4 @@ Esse programa foi feito baseando-se no algoritmo do projeto 3, e tem como objeti
 5. As subsequências são comparadas usando um *thrust::transform*, e o resultado é armazenado em um terceiro vetor, que tem seus elementos somados usando o *thrust::reduce* e o score máximo é obtido:
 
  ## **Relatório Final**
-O Relatório Final está localizado dentro do diretório *Relatorio_Final*, e possui tanto a extensão .ipynb qunato .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
+O Relatório Final está localizado dentro do diretório *Relatorio_Final*, e possui tanto a extensão .ipynb qunato .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Final/Relatorio_Abel.html).

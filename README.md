@@ -109,7 +109,7 @@ Máximo: 20
 ```
 
 ## **Projeto 3 - Busca Exaustiva**
-O terceiro projeto, que se encontra na pasta _Busca_Exaustiva_, possui a mesma estrutura do segundo projeto:
+O terceiro projeto, que se encontra na pasta *Busca_Exaustiva*, possui a mesma estrutura do segundo projeto:
 - **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
 - **exaust:** Executável criado a partir de *exaustiva.cc*;
 - **exaustiva.cc:** Arquivo em C++ que contém o algoritmo em si.
@@ -153,12 +153,12 @@ Subsequência Maior: ATT-TT-GT-TAGC
 Com um tempo levemente variável.
 
 ## **Relatório Intermediário**
-O Relatório Intermediário está localizado dentro do diretório *Relatorio_Preliminar*, e possui tanto a extensão .ipynb qunato .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
+O Relatório Intermediário está localizado dentro do diretório *Relatorio_Preliminar*, e possui tanto a extensão .ipynb quanto .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Preliminar/Relatorio_Abel.html).
 
 Caso seja necessário baixar e testar os algoritmos, é necessário descompactar as entradas presentes em *Entradas/entradas_8*.
 
 ## **Projeto 4 - OpenMP**
-O quarto projeto, que se encontra na pasta _OpenMP_, possui a mesma estrutura do segundo e terceiro projeto:
+O quarto projeto, que se encontra na pasta *OpenMP*, possui a mesma estrutura do segundo e terceiro projeto:
 - **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
 - **open:** Executável criado a partir de *openmp.cc*;
 - **openmp.cc:** Arquivo em C++ que contém o algoritmo em si.
@@ -169,6 +169,8 @@ Tendo isso em mente, o projeto segue o mesmo esquema de compilação e execuçã
 g++ -Wall -O3 -fopenmp openmp.cc -o open
 ./open < dna.seq
 ```
+Todavia, para a compilação desse programa, a flag *-fopenmp* é necessária.
+
 Esse programa foi feito baseando-se no algoritmo do projeto 3, e tem como objetivo paralelizar o mesmo. Levando isso em conta, é possível observar três pontos principais no código original:  
  
 <p align="center">
@@ -196,3 +198,33 @@ Já a terceira será paralelizada usando *#pragma omp parallel for reduction(max
 <p align="center">
   <img src="/OpenMP/Imagens/thirdPartChanged.png">
 </p>
+
+## **Projeto 5 - GPU**
+O quinto e último projeto, que se encontra na pasta *GPU*, possui a mesma estrutura do segundo, terceiro e quarto projeto:
+- **dna.seq:** Arquivo contendo ambas sequências, assim como o tamanho das mesmas;
+- **gpu:** Executável criado a partir de *openmp.cc*;
+- **gpu.cu:** Arquivo em CUDA que contém o algoritmo em si.
+Com a única diferença de que o arquivo utilizado é do tipo CUDA ao invés de C++. Além disso, foram usadas as mesmas sequências com os mesmos tamanhos dos outros projetos.
+ 
+Tendo isso em mente, o projeto possui um sistema de compilação um tanto único:
+```
+nvcc -arch=sm_70 -std=c++14 gpu.cu -o gpu
+./gpu < dna.seq
+```
+Por sua estrutura ser baseada em CUDA, é necessário a compilação usando *nvcc* ao invés de *g++* ou *gcc*. Além disso, flags especiais são necessárias. A flag *-arch=sm_70*, de acordo com a documentação oficial da Nvidia para a linguagem CUDA:
+
+
+> Specify the name of the class of NVIDIA virtual GPU architecture for which the CUDA input files must be compiled.
+
+Assim, nesse caso, a arquitetura da GPU utilizada no monstão é a *sm_70*. Já a flag *-std=c++14* basicamente define qual versão do C++ será utilizada, já que CUDA é uma extensão do C++.
+
+Esse programa foi feito baseando-se no algoritmo do projeto 3, e tem como objetivo executá-lo em uma GPU utilizando a biblioteca **THRUST**. Para isso, é necessário realizar uma série de mudanças e adições em relação ao código original:
+
+1. Foram importadas as bibliotecas do Thrust que serão utilizadas:
+2. Um struct *calculate_score* foi adicionado. Ele pega dois elementos do tipo 'char' e devolve 2 se forem iguais, se não, ele retorna -1:
+3. Os vetores são inicialmente armazenados em iteradores do tipo *thrust::host_vector<char>*, e posteriormente convertidos para *thrust::device_vector<char>*:
+4. Ao invés de armazenar as subsequências, agora um *thrust::device_vector* armazena os índices iniciais e finais de cada subsequência:
+5. As subsequências são comparadas usando um *thrust::transform*, e o resultado é armazenado em um terceiro vetor, que tem seus elementos somados usando o *thrust::reduce* e o score máximo é obtido:
+
+ ## **Relatório Final**
+O Relatório Final está localizado dentro do diretório *Relatorio_Final*, e possui tanto a extensão .ipynb quanto .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Final/Relatorio_Abel.html).

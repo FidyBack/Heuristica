@@ -3,11 +3,6 @@
 #include <chrono>
 
 
-#include <algorithm>
-#include <functional>
-#include <array>
-#include <string_view>
-
 int main(int argc, char const *argv[]) {
 	// Inputs
 	std::vector<char> seq1, seq2;
@@ -51,37 +46,42 @@ int main(int argc, char const *argv[]) {
 
 	// Compara as subsequências
 	int max_score = 0;
-	std::vector<char> max_subseq;
+	std::vector<char> max_subseq_minnor, max_subseq_major;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < int(subseqs.size()); j++) {
 			int score = 0;
-			for (int k = 0; k < int(subseqs[j].size()); k++) {
-				if (seq1[i+k] == subseqs[j][k]) {
-					score += 2;
+			std::vector<char> seq1_subseq;
+			if (i+int(subseqs[j].size()) <= n) {
+				for (int k = 0; k < int(subseqs[j].size()); k++) {
+					seq1_subseq.push_back(seq1[i+k]);
+					if (seq1[i+k] == subseqs[j][k]) {
+						score += 2;
+					}
+					else {
+						score -= 1;
+					}
 				}
-				else {
-					score -= 1;
+				if (score > max_score) {
+					max_score = score;
+					max_subseq_minnor = subseqs[j];
+					max_subseq_major = seq1_subseq;
 				}
 			}
-			if (score > max_score) {
-				max_score = score;
-				max_subseq = subseqs[j];
-			}
-			// std::cout << "Sequence: ";
-			// for (int k = 0; k < int(subseqs[j].size()); k++) {
-			// 	std::cout << subseqs[j][k];
-			// }
-			// std::cout << " Score: " << score << std::endl;
 		}
 	}
 
+
 	std::cout <<"Score Máximo: " << max_score << std::endl;
-	std::cout <<"Subsequência: ";
-	for (int i = 0; i < int(max_subseq.size()); i++) {
-		std::cout << max_subseq[i];
+	std::cout <<"Subsequência Menor: ";
+	for (int i = 0; i < int(max_subseq_minnor.size()); i++) {
+		std::cout << max_subseq_minnor[i];
 	}
 	std::cout << std::endl;
-
+	std::cout <<"Subsequência Maior: ";
+	for (int i = 0; i < int(max_subseq_major.size()); i++) {
+		std::cout << max_subseq_major[i];
+	}
+	std::cout << std::endl;
 
 	// Medida de tempo
 	auto end = std::chrono::high_resolution_clock::now();

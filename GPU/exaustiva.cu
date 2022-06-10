@@ -50,14 +50,9 @@ int main(int argc, char const *argv[]) {
 		std::swap(n, m);
 	}
 
-	// Define vetor de scores
-	thrust::host_vector<int> vcpu_score(n); // TESTE
-	thrust::fill(vcpu_score.begin(), vcpu_score.end(), 0); // TESTE
-
 	// Passa para a GPU
 	thrust::device_vector<char> vgpu_seq1(vcpu_seq1);
 	thrust::device_vector<char> vgpu_seq2(vcpu_seq2);
-	thrust::device_vector<int> vgpu_score(vcpu_score);
 
 
 	// Medida de tempo
@@ -85,43 +80,21 @@ int main(int argc, char const *argv[]) {
 		for (int j = 0; j < n; j++) {
 			int tam_subseq = vgpu_indexes[i+1] - vgpu_indexes[i];
 			if (tam_subseq + j <= vgpu_seq1.size()) {
-				std::cout << vgpu_indexes[i] << " " << vgpu_indexes[i+1] << std::endl;
+				thrust::device_vector<int> vgpu_score(tam_subseq+1);
 				thrust::transform(vgpu_seq2.begin()+vgpu_indexes[i], vgpu_seq2.end()+vgpu_indexes[i+1], vgpu_seq1.begin()+j, vgpu_score.begin(), calculate_score<char>(score));
-
-				std::cout << vgpu_seq2[vgpu_indexes[i]] << " " << vgpu_seq2[vgpu_indexes[i+1]] << " " << std::endl;
-				for (int k = 0; k < vgpu_score.size(); k++) {
-					std::cout << vgpu_score[k] << " ";
-				}
-				std::cout << std::endl;
-				thrust::fill(vgpu_score.begin(), vgpu_score.end(), 0);
-				// max_score = thrust::reduce(vgpu_score.begin(), vgpu_score.end(), 0) > max_score ? thrust::reduce(vgpu_score.begin(), vgpu_score.end(), 0) : max_score;
-				// std::cout << "Score: " << max_score << std::endl;
-				// thrust::fill(vgpu_score.begin(), vgpu_score.end(), 0);
+				
+				max_score = thrust::reduce(vgpu_score.begin(), vgpu_score.end(), 0) > max_score ? thrust::reduce(vgpu_score.begin(), vgpu_score.end(), 0) : max_score;
 			}
 		}
 	}
 
-	// std::cout << max_score << std::endl;
+ 	std::cout <<"Score Máximo: " << max_score << std::endl;
 
+	// Medida de tempo
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsed = end - start;
+	std::cout << "Tempo: " << elapsed.count() << " ms";
+	std::cout << std::endl;
 
-
- 	// std::cout <<"Score Máximo: " << max_score << std::endl;
-	// std::cout <<"Subsequência Menor: ";
-	// for (int i = 0; i < int(max_subseq_minnor.size()); i++) {
-	// 	std::cout << max_subseq_minnor[i];
-	// }
-	// std::cout << std::endl;
-	// std::cout <<"Subsequência Maior: ";
-	// for (int i = 0; i < int(max_subseq_major.size()); i++) {
-	// 	std::cout << max_subseq_major[i];
-	// }
-	// std::cout << std::endl;
-
-	// // Medida de tempo
-	// auto end = std::chrono::high_resolution_clock::now();
-	// std::chrono::duration<double, std::milli> elapsed = end - start;
-	// std::cout << "Tempo: " << elapsed.count() << " ms";
-	// std::cout << std::endl;
-
-	// return 0;
+	return 0;
 }

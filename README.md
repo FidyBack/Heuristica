@@ -221,10 +221,25 @@ Assim, nesse caso, a arquitetura da GPU utilizada no monstão é a *sm_70*. Já 
 Esse programa foi feito baseando-se no algoritmo do projeto 3, e tem como objetivo executá-lo em uma GPU utilizando a biblioteca **THRUST**. Para isso, é necessário realizar uma série de mudanças e adições em relação ao código original:
 
 1. Foram importadas as bibliotecas do Thrust que serão utilizadas:
+<p align="center">
+  <img src="/GPU/Images/Crop01.png">
+</p>
 2. Um struct *calculate_score* foi adicionado. Ele pega dois elementos do tipo 'char' e devolve 2 se forem iguais, se não, ele retorna -1:
+<p align="center">
+  <img src="/GPU/Images/Crop02.png">
+</p>
 3. Os vetores são inicialmente armazenados em iteradores do tipo *thrust::host_vector<char>*, e posteriormente convertidos para *thrust::device_vector<char>*:
+<p align="center">
+  <img src="/GPU/Images/Crop03.png">
+</p>
 4. Ao invés de armazenar as subsequências, agora um *thrust::device_vector* armazena os índices iniciais e finais de cada subsequência:
+<p align="center">
+  <img src="/GPU/Images/Crop04.png">
+</p>
 5. As subsequências são comparadas usando um *thrust::transform*, e o resultado é armazenado em um terceiro vetor, que tem seus elementos somados usando o *thrust::reduce* e o score máximo é obtido:
+<p align="center">
+  <img src="/GPU/Images/Crop05.png">
+</p>
 
  ## **Relatório Final**
 O Relatório Final está localizado dentro do diretório *Relatorio_Final*, e possui tanto a extensão .ipynb quanto .html que pode ser vista [aqui](https://htmlpreview.github.io/?https://github.com/FidyBack/Heuristica/blob/master/Relatorio_Final/Relatorio_Abel.html).
